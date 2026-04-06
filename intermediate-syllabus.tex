@@ -1,0 +1,123 @@
+\documentclass{article}
+\usepackage[letterpaper, left=0.75in, right=0.75in, top=1in, bottom=1in]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{multicol, fancyhdr, hyperref, parskip, enumitem}
+
+\parskip=0.6em
+\setlist{noitemsep, topsep=0.2em}
+
+%%% \sub{Title}
+\newcommand{\sub}[1]{
+    {\raggedleft
+        \large{\textsc{\color{OliveGreen}#1}}\par
+    }
+}
+
+%%% \split{Date}{Title}
+\newcommand{\split}[3]{
+\noindent\begin{tabular}[t]{@{}l}
+    \textbf{#1} \\ #2
+\end{tabular}
+\hfill
+\begin{tabular}[t]{l@{}}
+    \\
+    \textit{#3}
+\end{tabular}
+\noindent\rule{\columnwidth}{0.5pt}
+}
+
+%%% Header
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\large{\textbf{7-Session Intermediate Ceramics}}}
+\rhead{\color{OliveGreen}\small{April 6 -- May 18, 2026}}
+\rfoot{\small{Last updated \today.}}
+
+
+\begin{document}
+
+\sub{Description}
+
+This ceramics course covers both technical skills for throwing and aesthetic
+analysis in the area of pottery. We will cover a set of fundamental throwing
+skills for weights up to 5~lbs with a focus on efficiency. We will also cover
+analytical skills that will help you identify areas for improvement in your own
+throwing as well as increase your ability to plan your work in advance. Lastly,
+we set aside time for special techniques that students in the class wish to
+pursue. Optionally, there will be regular sessions where we will learn how to
+critique work using observational skills.
+
+\sub{Calendar}
+
+\begin{multicols}{2}
+
+\split{Session 1}{Fundamentals: Water \& Centering}{4/6 7:30-9:30pm}
+\begin{itemize}
+    \item \textbf{Techniques}: Reducing water usage; Centering
+    \item \textbf{Analysis}: Observation: the root of analysis, when to do it?
+    \item \textbf{Exercises}: Only add water throwing; Slip only centering
+\end{itemize}
+
+\split{Session 2}{Fundamentals: Opening \& Pulling}{4/13 7:30-9:30pm}
+\begin{itemize}
+    \item \textbf{Techniques}: Opening tall instead of short; How to pull: hand position, tool/pot size ratio; Collaring with both hands; Rib shaping
+    \item \textbf{Analysis}: Picking out elements of a curve: endpoints, inflections; Shape, color, and surface observations
+    \item \textbf{Exercises}: Compress base with fist, raising walls in process; Small plates off hump to practice right hand control
+\end{itemize}
+
+\split{Critique 1}{Mugs}{4/17 4:00-6:00pm}
+\begin{itemize}
+    \item \textbf{Critique}: Bring ten mug shapes, no firing necessary.
+      Separate into two groups of five based on what you think are the best or
+      worst.
+    \item \textbf{Exercise}: Analysing based on a rubric.
+\end{itemize}
+
+\split{Session 3}{Tall Throwing: Wall Work}{4/20 7:30-9:30pm}
+\begin{itemize}
+    \item \textbf{Techniques}: Centering to the top; Thick wall pulls; Collar pulls
+    \item \textbf{Analysis}: Regulated vs.\ free workmanship; the workmanship of risk vs.\ certainty
+    \item \textbf{Exercises}: Small cups off hump to practice collar pulls; General weight progression up to 3lbs
+\end{itemize}
+
+\columnbreak
+
+\split{Session 4}{Tall Throwing: Big Pulls \& Planning}{4/27 7:30-9:30pm}
+\begin{itemize}
+    \item \textbf{Techniques}: Big pulls; Planning pots: 2/3 for body and 1/3 for neck; shaping in early pulls; cleaning bowl bottoms
+    \item \textbf{Analysis}: Poorly made vs.\ well made work; Rough vs.\ precise work
+    \item \textbf{Exercises}: General weight progression up to 4lb; Wire off buttons
+\end{itemize}
+
+\split{Critique 2}{Bottles}{5/1 4:00-6:00pm}
+\begin{itemize}
+    \item \textbf{Critique}: Bring ten bottle shapes, separate into two groups
+      of five by best and worst.
+    \item \textbf{Exercise}: Creating a rubric.
+\end{itemize}
+
+\split{Session 5}{Review: Putting It All Together}{5/4 7:30-9:30pm}
+\begin{itemize}
+    \item \textbf{Analysis}: Joining rough and precise work
+    \item \textbf{Exercises}: General weight progression up to 5lb; Vase to plate to vase
+\end{itemize}
+
+\split{Session 6}{Open Studio}{5/11 7:30-9:30pm}
+This is a free session where we can cover special topics requested by the
+students in class. If no topics are brought forward we will cover glazing or
+trimming off the hump.
+
+\split{Critique 3}{Jars}{5/15 4:00-6:00pm}
+\begin{itemize}
+    \item \textbf{Critique}: Bring ten jar shapes, separate into two groups
+      of five by best and worst.
+    \item \textbf{Exercise}: Creating a rubric.
+\end{itemize}
+
+\split{Session 7}{Open Studio}{5/18 7:30-9:30pm}
+This is a free session where we can cover special topics requested by the
+students in the class. If no topics are brought forward we will cover teapots or
+textures.
+
+\end{multicols}
+\end{document}
