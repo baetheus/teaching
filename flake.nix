@@ -11,13 +11,12 @@
 
   outputs = inputs @ { self, nixpkgs, flake-utils, ... }:
     flake-utils.lib.eachDefaultSystem (system: let
-      pkgs = import nixpkgs { inherit system; config.allowUnfree = true; };
+      pkgs = import nixpkgs { inherit system; };
       mkScript = pkgs.writeShellScriptBin;
 
       shell = with pkgs; mkShell {
         packages = [
           # Insert packages here
-          claude-code
           texlive.combined.scheme-full
           texlab
           rubber 
