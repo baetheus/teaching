@@ -19,6 +19,7 @@
           # Insert packages here
           claude-code
           texlive.combined.scheme-full
+          texlab
           rubber 
 
           # Insert shell aliases here

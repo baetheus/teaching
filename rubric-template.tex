@@ -1,0 +1,128 @@
+\documentclass[11pt]{article}
+
+% ----- Packages -----
+\usepackage[margin=1in]{geometry}   % Page margins
+\usepackage{array}                   % Better column control
+\usepackage{tabularx}                % Tables with flexible widths
+\usepackage{ragged2e}                % Better text wrapping in cells
+\usepackage{xcolor}                  % Color support
+\usepackage{colortbl}                % Colored table cells/rows
+\usepackage{setspace}                % Line spacing
+\usepackage{amssymb}                 % Provides \square for checkboxes
+\usepackage{enumitem}                % Better list control
+
+% ----- Custom column types for tabularx -----
+% L = left-aligned wrappable column
+% C = centered wrappable column
+\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\Centering\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+
+% ----- Header row styling -----
+\definecolor{headergray}{RGB}{220,220,220}
+\newcommand{\headerrow}[1]{\cellcolor{headergray}\textbf{#1}}
+
+\begin{document}
+
+% ==================== TITLE & DESCRIPTION ====================
+\begin{center}
+	{\LARGE \textbf{Ceramic Mug Evaluation Rubric}} \\[0.5em]
+	{\large A Framework For Assessing Brandon's Mugs}
+\end{center}
+
+\vspace{0.5em}
+
+\noindent
+This rubric is designed to assess what Brandon Blaylock considers to be a good
+mug. It's focused on his personal aesthetic and functional considerations.
+
+\vspace{1.5em}
+
+% ==================== RUBRIC MATRIX ====================
+\begin{center}
+	\renewcommand{\arraystretch}{1.6}  % Increase row height for readability
+	\begin{tabularx}{\textwidth}{| L{2.5cm} | Y | Y | Y |}
+		\hline
+		\headerrow{Quality}                                                      &
+		\headerrow{\Centering Does Not Meet}                                     &
+		\headerrow{\Centering Partially Meets}                                   &
+		\headerrow{\Centering Fully Meets}                                         \\
+		\hline
+
+		% ----- Row 1: Ergonomics -----
+		\textbf{Ergonomics}                                                      &
+		Uncomfortable handle, sharp edges, chunky or awkward rim.                &
+		Hard to wash, holds less than 300ml, unbalanced weigh, wobbles on tablet &
+		No obvious awkward physical traits                                         \\
+		\hline
+
+		% ----- Row 2: Texture -----
+		\textbf{Texture}                                                         &
+		No textures or texture seems accidental                                  &
+		Some texture but seems inconsistently applied                            &
+		Texture is consistent and interesting                                      \\
+		\hline
+
+		% ----- Row 3: Glaze Quality -----
+		\textbf{Glaze Quality}                                                   &
+		Glaze is uneven, pinholed, or crawling.                                  &
+		Glaze is consistent but lacks depth or color development                 &
+		Glaze is fully developed and multiple glazes have crisp delineations       \\
+		\hline
+
+		% ----- Add more rows here following the same pattern -----
+		% \textbf{New Quality} &
+		%     Description for "does not meet." &
+		%     Description for "partially meets." &
+		%     Description for "fully meets." \\
+		% \hline
+	\end{tabularx}
+\end{center}
+
+\vspace{1.5em}
+
+% ==================== EVALUATION FORMS ====================
+
+% ----- Checkbox shortcut -----
+\newcommand{\cbox}{$\square$}
+
+% ----- A single evaluation form -----
+% To add/remove a quality, edit the list inside this command.
+% Make sure the qualities here match the rows in the rubric above.
+\newcommand{\evalform}{%
+	\textbf{Piece Name:} \underline{\hspace{0.55\linewidth}} \\[0.6em]
+	\textbf{Evaluation:} \\[0.2em]
+	\begin{tabular}{@{}l l@{}}
+		Ergonomics:    & \cbox\ None \quad \cbox\ Partial \quad \cbox\ Full \\
+		Texture:       & \cbox\ None \quad \cbox\ Partial \quad \cbox\ Full \\
+		Glaze Quality: & \cbox\ None \quad \cbox\ Partial \quad \cbox\ Full \\
+		% Add more qualities here, e.g.:
+		% New Quality:  & \cbox\ None \quad \cbox\ Partial \quad \cbox\ Full \\
+	\end{tabular} \\[0.6em]
+	\textbf{Notes:} \\[0.2em]
+	\rule{\linewidth}{0.4pt} \\[1em]
+	\rule{\linewidth}{0.4pt} \\[1em]
+	\rule{\linewidth}{0.4pt} \\[1em]
+	\rule{\linewidth}{0.4pt}
+}
+
+% ----- 2-column x 3-row grid of forms -----
+% Each row uses two minipages side-by-side.
+% \formgap controls spacing between rows; \colgap controls the gutter between columns.
+\newlength{\colgap}\setlength{\colgap}{0.04\textwidth}
+\newlength{\formwidth}\setlength{\formwidth}{0.48\textwidth}
+\newcommand{\formrow}{%
+	\noindent
+	\begin{minipage}[t]{\formwidth}\evalform\end{minipage}%
+	\hspace{\colgap}%
+	\begin{minipage}[t]{\formwidth}\evalform\end{minipage}%
+	\par\vspace{3em}
+}
+
+\formrow
+\formrow
+\formrow
+\formrow
+
+\end{document}
+
