@@ -22,7 +22,7 @@
           rubber 
 
           # Insert shell aliases here
-          (mkScript "hello" ''echo $MY_ENV'')
+          (mkScript "build" ''for i in *.tex; do rubber -d $i; rubber --clean $i; done'')
         ];
 
         shellHook = ''

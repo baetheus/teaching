@@ -1,0 +1,128 @@
+\documentclass[10pt]{article}
+\usepackage[letterpaper,top=0.5in,bottom=0.5in,left=1in,right=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{siunitx}
+
+\pagestyle{empty}
+
+% Consistent number/unit formatting across the whole document
+\sisetup{
+	separate-uncertainty = true,
+	table-format         = 2.2,
+	detect-weight        = true,
+	detect-family        = true,
+}
+
+% Setup table space aboth and below tables
+\setlength{\abovetopsep}{16pt}
+\setlength{\belowbottomsep}{16pt}
+
+\newcommand{\fivexfive}{\ensuremath{5\times5}}
+\newcommand{\mgdrop}{\ensuremath{\mathrm{mg/drop}}}
+
+\begin{document}
+
+\begin{center}
+	{\LARGE\bfseries Fichot \fivexfive{} Quicksheet}
+	\vspace{2pt}
+	{\hrule height 0.8pt}
+	\vspace{5pt}
+\end{center}
+
+This sheet is for usage with the Alain Fichot \fivexfive{} glaze testing fixture. Each well on
+my fixture is measured at \qty{2.2}{cm} $\times$ \qty{2.4}{cm} and \qty{1}{cm} deep. The section
+for Glaze Slurry contains information for the Leach 4321 glaze at ${\sim}\,\num{1.45}$ specific
+gravity. The section on Additions contains information on how to create bottles
+of addition material, generally a single colorant oxide, used to add ${\sim}X\%$ of
+colorant per drop.
+
+\section*{Glaze Slurry}
+
+Dose each well of the Fichot \fivexfive{} fixture with a volume of glaze slurry from the
+table below. The reference amount for most glazes is \qty{0.8}{mL} at ${\sim}\,\qty{0.4}{mm}$ thick,
+which is what the standard addition amounts are based on below.
+
+\begin{center}
+	\begin{tabular}{
+			S[table-format=1.1]
+			S[table-format=1.2]
+			S[table-format=1.2]
+			S[table-format=1.2]
+			S[table-format=1.2]
+		}
+		\toprule
+		{Volume (\unit{mL})} & {Fired Thickness (\unit{mm})} & {Specific Gravity} & {Wet Mass (\unit{g})} & {Dry Mass (\unit{g})} \\
+		\midrule
+		0.6                  & 0.30                          & 1.44               & 0.87                  & 0.43                  \\
+		0.8                  & 0.39                          & 1.44               & 1.16                  & 0.58                  \\
+		1.0                  & 0.49                          & 1.44               & 1.44                  & 0.72                  \\
+		1.2                  & 0.59                          & 1.44               & 1.73                  & 0.87                  \\
+		\bottomrule
+	\end{tabular}
+\end{center}
+
+\section*{Additions}
+
+To make a standard addition bottle add \qty{3}{g} of colorant (representing ${\sim}\,\qty{0.5}{\percent}$ colorant
+per \qty{0.05}{mL} drop) to \qty{50}{g} of distilled water. Optionally, add \qty{0.75}{g}
+of sodium bentonite for better colorant suspension. Mix well and let sit at least 24 hours
+before use for materials to fully hydrate.
+
+To verify the colorant solution is accurate, weigh 100 drops of the mixture in grams ($W$),
+let dry completely, and weigh the residue in grams ($R$). Use the formulas below to compute
+\mgdrop, then convert to percentage per drop with the Dry Mass value above:
+
+\vspace{2pt}
+\begin{center}
+	\setlength{\arraycolsep}{2pt}
+	\renewcommand{\arraystretch}{2.2}
+	\begin{tabular}{l l}
+		\textbf{Colorant amount in $grams$:}  & $\displaystyle \mgdrop = 10\,R$                                       \\
+		\textbf{...with $X grams$ bentonite:} & $\displaystyle \mgdrop = 10\,R \times \frac{m_c}{m_c + X}$            \\
+		\textbf{Percentage Conversion:}       & $\displaystyle \%/drop = \frac{\mgdrop}{10 \times (\text{Dry Mass})}$ \\
+	\end{tabular}
+
+	\vspace{4pt}
+	{\small$R$ = dry residue from 100 drops (\unit{g})\quad}
+
+	{\small$m_c$ = colorant added to the bottle (\unit{g})\quad}
+\end{center}
+
+\vspace{4pt}
+
+The bottle additions are targeted to add 0.5\% of colorant per drop based on the
+\qty{0.4}{mm} thick reference glaze. There are cases where one might want to use
+existing colorant bottles for other volumes of glaze. Following is a table that
+shows percentages for other amounts of glaze based on the dry mass of the Glaze
+Slurry. Most glazes will scale linearly with specific gravity (SG). Following is
+the formula one can use to find dose volume for a given thickness with a new
+specific gravity:
+
+\begin{center}
+
+	$\text{Dry Mass (g)} = 1.64 \times \text{Volume (mL)} \times (\text{SG} - 1)$
+
+	\setlength{\tabcolsep}{11pt}
+	\begin{tabular}{
+			l
+			S[table-format=1.2]
+			S[table-format=1.2]
+			S[table-format=1.2]
+			S[table-format=1.2]
+		}
+		\toprule
+		                                 & \multicolumn{4}{c}{Glaze Dry Mass (\unit{g})}                                                                      \\
+		\cmidrule(lr){2-5}
+		{Reference \%/drop}              & {0.43}                                        & {0.58}               & {0.72}               & {0.87}               \\
+		\midrule
+		\qty{0.2}{\percent} (\qty{1}{g}) & \qty{0.23}{\percent}                          & \qty{0.17}{\percent} & \qty{0.14}{\percent} & \qty{0.11}{\percent} \\
+		\qty{0.5}{\percent} (\qty{3}{g}) & \qty{0.70}{\percent}                          & \qty{0.52}{\percent} & \qty{0.42}{\percent} & \qty{0.34}{\percent} \\
+		\qty{1}{\percent} (\qty{6}{g})   & \qty{1.40}{\percent}                          & \qty{1.03}{\percent} & \qty{0.83}{\percent} & \qty{0.69}{\percent} \\
+		\bottomrule
+	\end{tabular}
+\end{center}
+
+
+\end{document}
