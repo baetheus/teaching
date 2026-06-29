@@ -1,0 +1,70 @@
+\documentclass[11pt]{article}
+\usepackage[letterpaper,landscape,margin=0.6in]{geometry}
+\usepackage{amsmath}
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{center}
+	{\LARGE\bfseries Ceramic Glaze Color-Response Test Program}
+\end{center}
+\hrule
+\vspace{1.5em}
+
+\noindent
+\begin{minipage}[t]{0.46\textwidth}
+	\textbf{Colorant Layout (one 5$\times$5 tile)} --- \% of dry base weight.
+
+	\vspace{0.6em}
+	\begin{tabular}{l c c c c c}
+		\hline
+		\textbf{Colorant}                    & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} \\
+		\hline
+		Copper carbonate                     & 0.5        & 1          & 2          & 4          & 6          \\
+		Red iron oxide ($\mathrm{Fe_2O_3}$)  & 1          & 2          & 4          & 8          & 12         \\
+		Manganese dioxide ($\mathrm{MnO_2}$) & 1          & 2          & 4          & 8          & 12         \\
+		Chrome oxide ($\mathrm{Cr_2O_3}$)    & 0.2        & 0.4        & 0.6        & 1          & 2          \\
+		Cobalt oxide ($\mathrm{Co_3O_4}$)    & 0.2        & 0.4        & 0.6        & 1          & 2          \\
+		\hline
+	\end{tabular}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.50\textwidth}
+	\textbf{Base Treatments (tiles 1--5)}
+
+	\vspace{0.6em}
+	\begin{tabular}{c l}
+		\hline
+		\textbf{Tile} & \textbf{Base treatment (every spot)} \\
+		\hline
+		1             & Base glaze (unmodified)              \\
+		2             & Base + 5\% zircopax                  \\
+		3             & Base + 10\% zircopax                 \\
+		4             & Base + 4\% rutile                    \\
+		5             & Base + 5\% zircopax + 4\% rutile     \\
+		\hline
+	\end{tabular}
+\end{minipage}
+
+\vspace{2em}
+
+%% ============ Triaxial tests ============
+\noindent\textbf{Triaxial Tests (tiles 6--10)} --- the 10 unique 3-colorant blends
+($\binom{5}{3}=10$), two per tile. Corners: A = top-left, B = top-right,
+C = bottom-left, D = bottom-right. The shared line blend runs A$\rightarrow$D, so the
+two triaxials on each tile are A-B-D and A-C-D (corners = level-5 loading).
+
+\vspace{0.6em}
+\noindent\begin{tabular}{c l l l l}
+	\hline
+	\textbf{Tile} & \textbf{A}     & \textbf{B}     & \textbf{C} & \textbf{D}     \\
+	\hline
+	6             & Copper         & Manganese      & Chrome     & Red iron oxide \\
+	7             & Copper         & Red iron oxide & Manganese  & Cobalt         \\
+	8             & Copper         & Manganese      & Cobalt     & Chrome         \\
+	9             & Red iron oxide & Chrome         & Cobalt     & Manganese      \\
+	10            & Chrome         & Red iron oxide & Manganese  & Cobalt         \\
+	\hline
+\end{tabular}
+
+\end{document}
