@@ -1,0 +1,21 @@
+\hoffset=-1in \voffset=-1in
+\pdfpagewidth=8.5in \pdfpageheight=11in
+\nopagenumbers \offinterlineskip
+
+% 4in x 5in outlined rectangle (1pt lines)
+\def\rect{\hbox{%
+		\vbox to 5in{\hrule width 4in height 1pt \vfil \hrule width 4in height 1pt}%
+		\kern-4in
+		\hbox to 4in{\vrule height 5in depth 0pt width 1pt \hfil
+				\vrule height 5in depth 0pt width 1pt}}}
+
+% dotted line layer
+\setbox1=\hbox to 8.5in{\hfil
+		\vbox to 11in{\leaders\vbox to 3pt{\hrule width .4pt height 1pt \vss}\vfil}%
+		\hfil}
+
+% rectangle layer, centered on the page
+\setbox2=\hbox to 8.5in{\hfil\vbox to 11in{\vfil\rect\vfil}\hfil}
+
+\shipout\vbox{\box1 \kern-11in \box2}
+\end
